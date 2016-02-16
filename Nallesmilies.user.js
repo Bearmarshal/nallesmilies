@@ -38,9 +38,9 @@ for (let i = 0; i < smilies.length; i++) {
   let img = smilies[i].firstElementChild.firstElementChild.firstElementChild;
   let type = /:(\w+):/.exec(img.alt);
   if (type[1] == "smallcool") {
-	img.alt = "[roll]1d6[/roll]";
-	img.src = "http://www.giantitp.com/forums/images/sand/icons/icon_d6.png";
-	img.title = "Roll 1d6"
+	img.alt = "[roll]1d20[/roll]";
+	img.src = "http://www.giantitp.com/forums/images/sand/icons/icon_d20.png";
+	img.title = "Roll 1d20"
   } else {
 	let nalle = GM_getValue("nallesmilies." + type[1] + ".img");
 	img.alt = "[IMG]" + nalle + "[/IMG]";
