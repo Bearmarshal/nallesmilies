@@ -3,7 +3,7 @@
 // @description This script replaces all smilies in the smilie box on the GiantitP forums with custom nalle counterparts.
 // @icon http://i.imgur.com/jLvmsd9.png
 // @namespace http://www.bearmarshal.com/scripts/greasemonkey
-// @version 1.1.0
+// @version 1.1.1
 // @match *://*.giantitp.com/forums/*
 // ==/UserScript==
 
@@ -27,22 +27,19 @@ var nallesmilies = {
 
 let smilieBox = document.getElementById("vB_Editor_001_smiliebox");
 
-if (smilieBox == null) {
-  return;
-}
-
-let smilies = smilieBox.children;    
-for (let i = 0; i < smilies.length; i++) {
-  let img = smilies[i].firstElementChild.firstElementChild.firstElementChild;
-  let smilieType = /:(\w+):/.exec(img.alt);
-  if (smilieType[1] == "smallcool") {
-	img.alt = "[roll]1d20[/roll]";
-	img.src = "http://www.giantitp.com/forums/images/sand/icons/icon_d20.png";
-	img.title = "Roll 1d20"
-  } else {
-	let nalleURI = nallesmilies[smilieType[1]];
-	img.alt = "[IMG]" + nalleURI + "[/IMG]";
-	img.src = nalleURI;
-  }
-  
+if (smilieBox != null) {
+	let smilies = smilieBox.children;    
+	for (let i = 0; i < smilies.length; i++) {
+    	let img = smilies[i].firstElementChild.firstElementChild.firstElementChild;
+    	let smilieType = /:(\w+):/.exec(img.alt);
+    	if (smilieType[1] == "smallcool") {
+    		img.alt = "[roll]1d20[/roll]";
+    		img.src = "http://www.giantitp.com/forums/images/sand/icons/icon_d20.png";
+    		img.title = "Roll 1d20"
+    	} else {
+    		let nalleURI = nallesmilies[smilieType[1]];
+    		img.alt = "[IMG]" + nalleURI + "[/IMG]";
+    		img.src = nalleURI;
+    	}
+	}
 }
