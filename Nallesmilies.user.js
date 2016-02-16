@@ -3,7 +3,7 @@
 // @description This script replaces all smilies in the smilie box on the GiantitP forums with custom nalle counterparts.
 // @icon http://i.imgur.com/jLvmsd9.png
 // @namespace http://www.bearmarshal.com/scripts/greasemonkey
-// @version 1.0.0
+// @version 1.0.1
 // @match *://*.giantitp.com/forums/*
 // ==/UserScript==
 
